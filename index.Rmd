@@ -1,0 +1,26 @@
+---
+title: "A7-Report"
+author: "Garrett Olerud, Madi Hess, Spencer Knapp"
+date: "May 13, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+source("analysis.R")
+data <- read.csv("data/intro-survey.csv", stringsAsFactors = FALSE)
+summary_data <- intro_function(data)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Class Data for Info 201!!
+  In the beginning of the quarter we all took a survey to get a general understanding of the students in the class. The data encompases class standing, experience with coding, preferences, and some personal information.  For instance there are `r summary_data[['Number of Students']]` that started in the class at the beginning of the quarter. Some of the personal data that was included was height and not to single anyone out we calculated the average height which is `r summary_data[['Average Height']]`. There are `r summary_data[['Class Standing: Freshman']]` Freshman, `r summary_data[['Class Standing: Sophomore']]` Sophomore's, `r summary_data[['Class Standing: Junior']]` Junior's, and `r summary_data[['Class Standing: Senior']]` Senior's in this quarter of Info 201. of all these people at the start of the quarter only `r major_interest(data)` planned on majoring in the class.  This really shows just how diverse the student body is in this quarter of Info 201.
+  
+```{r, echo=FALSE}
+
+```
+
+
+
