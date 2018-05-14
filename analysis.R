@@ -3,8 +3,21 @@ library("dplyr")
 intro_survey <- read.csv("data/intro-survey.csv", stringsAsFactors = FALSE)
 
 # Explore intro survey data
-colnames(intro_survey)
-num_students <- nrow(intro_survey)
+num_students <- function(dataset) {
+  nrow(dataset)
+}
+
+# Find average height
+avg_height <- function(dataset) {
+  round(mean(dataset$How.many.inches.tall.are.you., na.rm = TRUE), 2)
+}
+
+# Number students applying to the major
+major_interest <- function(dataset) {
+  dataset %>%
+  filter(Are.you.interested.in.applying.to.the.Informatics.major. == "Yes") %>%
+  tally()
+}
 
 # Summary function
 intro_function <- function(dataset) {
