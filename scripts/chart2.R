@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(RColorBrewer)
 library(plotly)
-
+library(lintr)
 intro_survey <- read.csv("data/intro-survey.csv", stringsAsFactors = FALSE)
 
 #Create second function for Rmd page, use color palette that helps
@@ -15,7 +15,7 @@ plotted_2 <- function(dataset) {
                             fill = Were.you.born.in.Washington.state.)) +
     labs(x = "Interested in Info Major", y = "Total") +
     ggtitle("Interest in Info WA Natives vs. Non-Natives") +
-    scale_fill_brewer(palette="Set2") +
-    scale_fill_discrete(name="Born in WA State?")
+    scale_fill_brewer(palette = "Set2") +
+    scale_fill_discrete(name = "Born in WA State?")
   return(plotted_bar)
 }

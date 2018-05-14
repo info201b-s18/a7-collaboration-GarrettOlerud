@@ -3,6 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(RColorBrewer)
 library(plotly)
+library(lintr)
 
 intro_survey <- read.csv("data/intro-survey.csv", stringsAsFactors = FALSE)
 
@@ -15,8 +16,7 @@ plotted <- function(dataset) {
                             fill = What.is.your.current.class.standing.)) +
     labs(x = "Seahawk Fan", y = "Total") +
     ggtitle("Do Info Students Like the Seahawks?") +
-    scale_fill_brewer(palette="Set1") +
-    scale_fill_discrete(name="Key")
+    scale_fill_brewer(palette = "Set1") +
+    scale_fill_discrete(name = "Key")
   return(plotted_bar)
 }
-
